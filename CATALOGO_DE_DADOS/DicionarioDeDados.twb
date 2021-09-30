@@ -1,0 +1,2724 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20211.21.0819.1914                               -->
+<workbook original-version='18.1' source-build='2021.1.5 (20211.21.0819.1914)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location id='CatlogodeDados-ENEM' path='/workbooks' revision='1.1' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='DICIONARIO_TCC' inline='true' name='federated.0eqwd8k04z3rfm16yue131w9t33w' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='DICIONARIO_TCC' name='excel-direct.10d5frz0utnnnw1awwmkj0pzx3l5'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/rdear/Downloads/PJT_ENEM/02_Dicionario/DICIONARIO_TCC.xlsx' interpretationMode='0' password='' server='' validate='no' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.10d5frz0utnnnw1awwmkj0pzx3l5' name='CAMPOS_CURATED' table='[CAMPOS_CURATED$]' type='table'>
+          <columns gridOrigin='A1:C308:no:A1:C308:0' header='yes' outcome='2'>
+            <column datatype='string' name='TABELA' ordinal='0' />
+            <column datatype='integer' name='SEQUENCIA' ordinal='1' />
+            <column datatype='string' name='CAMPO' ordinal='2' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='excel-direct.10d5frz0utnnnw1awwmkj0pzx3l5' name='CAMPOS_CURATED' table='[CAMPOS_CURATED$]' type='table'>
+            <columns gridOrigin='A1:C308:no:A1:C308:0' header='yes' outcome='2'>
+              <column datatype='string' name='TABELA' ordinal='0' />
+              <column datatype='integer' name='SEQUENCIA' ordinal='1' />
+              <column datatype='string' name='CAMPO' ordinal='2' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.10d5frz0utnnnw1awwmkj0pzx3l5' name='DESCRICAO_CAMPOS_CURATED' table='[DESCRICAO_CAMPOS_CURATED$]' type='table'>
+            <columns gridOrigin='A1:D10001:no:A1:D10001:0' header='yes' outcome='2'>
+              <column datatype='string' name='NOME_CAMPO_CLEANED' ordinal='0' />
+              <column datatype='string' name='DESCRICAO_CAMPO_CLEANED' ordinal='1' />
+              <column datatype='string' name='TIPO_DADOS' ordinal='2' />
+              <column datatype='integer' name='TAMANHO' ordinal='3' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.10d5frz0utnnnw1awwmkj0pzx3l5' name='TABELAS_CURATED' table='[TABELAS_CURATED$]' type='table'>
+            <columns gridOrigin='A1:C12:no:A1:C12:0' header='yes' outcome='2'>
+              <column datatype='string' name='TABELA' ordinal='0' />
+              <column datatype='string' name='DESCRICAO_TABELA' ordinal='1' />
+              <column datatype='string' name='TIPO_TABELA' ordinal='2' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[CAMPO]' value='[CAMPOS_CURATED].[CAMPO]' />
+          <map key='[DESCRICAO_CAMPO_CLEANED]' value='[DESCRICAO_CAMPOS_CURATED].[DESCRICAO_CAMPO_CLEANED]' />
+          <map key='[DESCRICAO_TABELA]' value='[TABELAS_CURATED].[DESCRICAO_TABELA]' />
+          <map key='[NOME_CAMPO_CLEANED]' value='[DESCRICAO_CAMPOS_CURATED].[NOME_CAMPO_CLEANED]' />
+          <map key='[SEQUENCIA]' value='[CAMPOS_CURATED].[SEQUENCIA]' />
+          <map key='[TABELA (TABELAS!CURATED)]' value='[TABELAS_CURATED].[TABELA]' />
+          <map key='[TABELA]' value='[CAMPOS_CURATED].[TABELA]' />
+          <map key='[TAMANHO]' value='[DESCRICAO_CAMPOS_CURATED].[TAMANHO]' />
+          <map key='[TIPO_DADOS]' value='[DESCRICAO_CAMPOS_CURATED].[TIPO_DADOS]' />
+          <map key='[TIPO_TABELA]' value='[TABELAS_CURATED].[TIPO_TABELA]' />
+        </cols>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[CAMPOS_CURATED]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>3</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C308:no:A1:C308:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[DESCRICAO_CAMPOS_CURATED]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D10001:no:A1:D10001:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[TABELAS_CURATED]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>3</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C12:no:A1:C12:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TABELA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[TABELA]</local-name>
+            <parent-name>[CAMPOS_CURATED]</parent-name>
+            <remote-alias>TABELA</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SEQUENCIA</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SEQUENCIA]</local-name>
+            <parent-name>[CAMPOS_CURATED]</parent-name>
+            <remote-alias>SEQUENCIA</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CAMPO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[CAMPO]</local-name>
+            <parent-name>[CAMPOS_CURATED]</parent-name>
+            <remote-alias>CAMPO</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NOME_CAMPO_CLEANED</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[NOME_CAMPO_CLEANED]</local-name>
+            <parent-name>[DESCRICAO_CAMPOS_CURATED]</parent-name>
+            <remote-alias>NOME_CAMPO_CLEANED</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DESCRICAO_CAMPO_CLEANED</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DESCRICAO_CAMPO_CLEANED]</local-name>
+            <parent-name>[DESCRICAO_CAMPOS_CURATED]</parent-name>
+            <remote-alias>DESCRICAO_CAMPO_CLEANED</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TIPO_DADOS</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[TIPO_DADOS]</local-name>
+            <parent-name>[DESCRICAO_CAMPOS_CURATED]</parent-name>
+            <remote-alias>TIPO_DADOS</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TAMANHO</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TAMANHO]</local-name>
+            <parent-name>[DESCRICAO_CAMPOS_CURATED]</parent-name>
+            <remote-alias>TAMANHO</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TABELA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[TABELA (TABELAS!CURATED)]</local-name>
+            <parent-name>[TABELAS_CURATED]</parent-name>
+            <remote-alias>TABELA</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DESCRICAO_TABELA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DESCRICAO_TABELA]</local-name>
+            <parent-name>[TABELAS_CURATED]</parent-name>
+            <remote-alias>DESCRICAO_TABELA</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TIPO_TABELA</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[TIPO_TABELA]</local-name>
+            <parent-name>[TABELAS_CURATED]</parent-name>
+            <remote-alias>TIPO_TABELA</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Campo' datatype='string' name='[CAMPO]' role='dimension' type='nominal' />
+      <column caption='Descricao Campo' datatype='string' name='[DESCRICAO_CAMPO_CLEANED]' role='dimension' type='nominal' />
+      <column caption='Descricao Tabela' datatype='string' name='[DESCRICAO_TABELA]' role='dimension' type='nominal' />
+      <column caption='Nome Campo' datatype='string' name='[NOME_CAMPO_CLEANED]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Sequencia' datatype='integer' name='[SEQUENCIA]' role='dimension' type='ordinal' />
+      <column caption='Tabela ' datatype='string' name='[TABELA (TABELAS!CURATED)]' role='dimension' type='nominal' />
+      <column caption='Tabela' datatype='string' name='[TABELA]' role='dimension' type='nominal' />
+      <column caption='Tamanho' datatype='integer' name='[TAMANHO]' role='measure' type='quantitative' />
+      <column caption='Tipo Dados' datatype='string' name='[TIPO_DADOS]' role='dimension' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='CAMPOS_CURATED' datatype='table' name='[__tableau_internal_object_id__].[CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='DESCRICAO_CAMPOS_CURATED' datatype='table' name='[__tableau_internal_object_id__].[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='TABELAS_CURATED' datatype='table' name='[__tableau_internal_object_id__].[TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944]' role='measure' type='quantitative' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='pt_BR' class='hyper' dbname='C:/Users/rdear/Downloads/PJT_ENEM/02_Dicionario/DICIONARIO_TCC.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='09/28/2021 02:46:50 AM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D' table='[Extract].[CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+            <relation name='CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D' table='[Extract].[CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D]' type='table' />
+            <relation name='DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0' table='[Extract].[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0]' type='table' />
+            <relation name='TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944' table='[Extract].[TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944]' type='table' />
+          </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <cols>
+            <map key='[CAMPO]' value='[CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D].[CAMPO]' />
+            <map key='[DESCRICAO_CAMPO_CLEANED]' value='[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0].[DESCRICAO_CAMPO_CLEANED]' />
+            <map key='[DESCRICAO_TABELA]' value='[TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944].[DESCRICAO_TABELA]' />
+            <map key='[NOME_CAMPO_CLEANED]' value='[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0].[NOME_CAMPO_CLEANED]' />
+            <map key='[SEQUENCIA]' value='[CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D].[SEQUENCIA]' />
+            <map key='[TABELA (TABELAS!CURATED)]' value='[TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944].[TABELA]' />
+            <map key='[TABELA]' value='[CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D].[TABELA]' />
+            <map key='[TAMANHO]' value='[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0].[TAMANHO]' />
+            <map key='[TIPO_DADOS]' value='[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0].[TIPO_DADOS]' />
+            <map key='[TIPO_TABELA]' value='[TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944].[TIPO_TABELA]' />
+          </cols>
+          <refresh increment-key='' incremental-updates='false'>
+            <refresh-event add-from-file-path='DICIONARIO_TCC' increment-value='%null%' refresh-type='create' rows-inserted='634' timestamp-start='2021-09-28 02:46:50.961' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>TABELA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[TABELA]</local-name>
+              <parent-name>[CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D]</parent-name>
+              <remote-alias>TABELA</remote-alias>
+              <ordinal>0</ordinal>
+              <family>CAMPOS_CURATED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SEQUENCIA</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[SEQUENCIA]</local-name>
+              <parent-name>[CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D]</parent-name>
+              <remote-alias>SEQUENCIA</remote-alias>
+              <ordinal>1</ordinal>
+              <family>CAMPOS_CURATED</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>168</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CAMPO</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CAMPO]</local-name>
+              <parent-name>[CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D]</parent-name>
+              <remote-alias>CAMPO</remote-alias>
+              <ordinal>2</ordinal>
+              <family>CAMPOS_CURATED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>289</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>NOME_CAMPO_CLEANED</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[NOME_CAMPO_CLEANED]</local-name>
+              <parent-name>[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0]</parent-name>
+              <remote-alias>NOME_CAMPO_CLEANED</remote-alias>
+              <ordinal>3</ordinal>
+              <family>DESCRICAO_CAMPOS_CURATED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>316</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DESCRICAO_CAMPO_CLEANED</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DESCRICAO_CAMPO_CLEANED]</local-name>
+              <parent-name>[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0]</parent-name>
+              <remote-alias>DESCRICAO_CAMPO_CLEANED</remote-alias>
+              <ordinal>4</ordinal>
+              <family>DESCRICAO_CAMPOS_CURATED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>313</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TIPO_DADOS</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[TIPO_DADOS]</local-name>
+              <parent-name>[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0]</parent-name>
+              <remote-alias>TIPO_DADOS</remote-alias>
+              <ordinal>5</ordinal>
+              <family>DESCRICAO_CAMPOS_CURATED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TAMANHO</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[TAMANHO]</local-name>
+              <parent-name>[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0]</parent-name>
+              <remote-alias>TAMANHO</remote-alias>
+              <ordinal>6</ordinal>
+              <family>DESCRICAO_CAMPOS_CURATED</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TABELA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[TABELA (TABELAS!CURATED)]</local-name>
+              <parent-name>[TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944]</parent-name>
+              <remote-alias>TABELA</remote-alias>
+              <ordinal>7</ordinal>
+              <family>TABELAS_CURATED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DESCRICAO_TABELA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DESCRICAO_TABELA]</local-name>
+              <parent-name>[TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944]</parent-name>
+              <remote-alias>DESCRICAO_TABELA</remote-alias>
+              <ordinal>8</ordinal>
+              <family>TABELAS_CURATED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TIPO_TABELA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[TIPO_TABELA]</local-name>
+              <parent-name>[TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944]</parent-name>
+              <remote-alias>TIPO_TABELA</remote-alias>
+              <ordinal>9</ordinal>
+              <family>TABELAS_CURATED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Brazil&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='CAMPOS_CURATED' id='CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D'>
+            <properties context=''>
+              <relation connection='excel-direct.10d5frz0utnnnw1awwmkj0pzx3l5' name='CAMPOS_CURATED' table='[CAMPOS_CURATED$]' type='table'>
+                <columns gridOrigin='A1:C308:no:A1:C308:0' header='yes' outcome='2'>
+                  <column datatype='string' name='TABELA' ordinal='0' />
+                  <column datatype='integer' name='SEQUENCIA' ordinal='1' />
+                  <column datatype='string' name='CAMPO' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D' table='[Extract].[CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D]' type='table' />
+            </properties>
+          </object>
+          <object caption='DESCRICAO_CAMPOS_CURATED' id='DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0'>
+            <properties context=''>
+              <relation connection='excel-direct.10d5frz0utnnnw1awwmkj0pzx3l5' name='DESCRICAO_CAMPOS_CURATED' table='[DESCRICAO_CAMPOS_CURATED$]' type='table'>
+                <columns gridOrigin='A1:D10001:no:A1:D10001:0' header='yes' outcome='2'>
+                  <column datatype='string' name='NOME_CAMPO_CLEANED' ordinal='0' />
+                  <column datatype='string' name='DESCRICAO_CAMPO_CLEANED' ordinal='1' />
+                  <column datatype='string' name='TIPO_DADOS' ordinal='2' />
+                  <column datatype='integer' name='TAMANHO' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0' table='[Extract].[DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0]' type='table' />
+            </properties>
+          </object>
+          <object caption='TABELAS_CURATED' id='TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944'>
+            <properties context=''>
+              <relation connection='excel-direct.10d5frz0utnnnw1awwmkj0pzx3l5' name='TABELAS_CURATED' table='[TABELAS_CURATED$]' type='table'>
+                <columns gridOrigin='A1:C12:no:A1:C12:0' header='yes' outcome='2'>
+                  <column datatype='string' name='TABELA' ordinal='0' />
+                  <column datatype='string' name='DESCRICAO_TABELA' ordinal='1' />
+                  <column datatype='string' name='TIPO_TABELA' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944' table='[Extract].[TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[CAMPO]' />
+              <expression op='[NOME_CAMPO_CLEANED]' />
+            </expression>
+            <first-end-point object-id='CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D' />
+            <second-end-point object-id='DESCRICAO!CAMPOS!CURATED_AEB33658EA4B405DB87398C8DC1128C0' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[TABELA]' />
+              <expression op='[TABELA (TABELAS!CURATED)]' />
+            </expression>
+            <first-end-point object-id='CAMPOS!CURATED_865FA6CF3E264944BCC4770391B4957D' />
+            <second-end-point object-id='TABELAS!CURATED_F509A92BDFEF46F08654013F0ADFC944' unique-key='true' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='CLEANED_DICIONARIO_TCC' inline='true' name='federated.0xkocjr1r27xsb14beufj0tkjaa7' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='DICIONARIO_TCC' name='excel-direct.09g3adg1jtb01n1b6p2jh127t83v'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/rdear/Downloads/PJT_ENEM/02_Dicionario/DICIONARIO_TCC.xlsx' interpretationMode='0' password='' server='' validate='no' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.09g3adg1jtb01n1b6p2jh127t83v' name='DICIONARIO_RAW_CLEANED' table='[DICIONARIO_RAW_CLEANED$]' type='table'>
+          <columns gridOrigin='A1:G10001:no:A1:G2147483647:0' header='yes' outcome='2'>
+            <column datatype='string' name='ANO' ordinal='0' />
+            <column datatype='string' name='TIPO_ARQUIVO' ordinal='1' />
+            <column datatype='integer' name='SEQUENCIA' ordinal='2' />
+            <column datatype='string' name='NOME_CAMPO_RAW' ordinal='3' />
+            <column datatype='string' name='DESCRICAO_CAMPO_RAW' ordinal='4' />
+            <column datatype='string' name='NOME_CAMPO_CLEANED' ordinal='5' />
+            <column datatype='string' name='DESCRICAO_CAMPO_CLEANED' ordinal='6' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='excel-direct.09g3adg1jtb01n1b6p2jh127t83v' name='DICIONARIO_RAW_CLEANED' table='[DICIONARIO_RAW_CLEANED$]' type='table'>
+            <columns gridOrigin='A1:G10001:no:A1:G2147483647:0' header='yes' outcome='2'>
+              <column datatype='string' name='ANO' ordinal='0' />
+              <column datatype='string' name='TIPO_ARQUIVO' ordinal='1' />
+              <column datatype='integer' name='SEQUENCIA' ordinal='2' />
+              <column datatype='string' name='NOME_CAMPO_RAW' ordinal='3' />
+              <column datatype='string' name='DESCRICAO_CAMPO_RAW' ordinal='4' />
+              <column datatype='string' name='NOME_CAMPO_CLEANED' ordinal='5' />
+              <column datatype='string' name='DESCRICAO_CAMPO_CLEANED' ordinal='6' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.09g3adg1jtb01n1b6p2jh127t83v' name='DOMINIOS_RAW_CLEANED' table='[DOMINIOS_RAW_CLEANED$]' type='table'>
+            <columns gridOrigin='A1:G2168:no:A1:G2168:0' header='yes' outcome='2'>
+              <column datatype='string' name='ANO' ordinal='0' />
+              <column datatype='string' name='NOME_CAMPO_RAW' ordinal='1' />
+              <column datatype='string' name='CODIGO_DOMINIO_RAW' ordinal='2' />
+              <column datatype='string' name='DESCRICAO_RAW' ordinal='3' />
+              <column datatype='string' name='NOME_CAMPO_CLEANED' ordinal='4' />
+              <column datatype='integer' name='CODIGO_DOMINIO_CURATED' ordinal='5' />
+              <column datatype='string' name='DESCRICAO_CURATED' ordinal='6' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[ANO (DOMINIOS!RAW!CLEANED)]' value='[DOMINIOS_RAW_CLEANED].[ANO]' />
+          <map key='[ANO]' value='[DICIONARIO_RAW_CLEANED].[ANO]' />
+          <map key='[CODIGO_DOMINIO_CURATED]' value='[DOMINIOS_RAW_CLEANED].[CODIGO_DOMINIO_CURATED]' />
+          <map key='[CODIGO_DOMINIO_RAW]' value='[DOMINIOS_RAW_CLEANED].[CODIGO_DOMINIO_RAW]' />
+          <map key='[DESCRICAO_CAMPO_CLEANED]' value='[DICIONARIO_RAW_CLEANED].[DESCRICAO_CAMPO_CLEANED]' />
+          <map key='[DESCRICAO_CAMPO_RAW]' value='[DICIONARIO_RAW_CLEANED].[DESCRICAO_CAMPO_RAW]' />
+          <map key='[DESCRICAO_CURATED]' value='[DOMINIOS_RAW_CLEANED].[DESCRICAO_CURATED]' />
+          <map key='[DESCRICAO_RAW]' value='[DOMINIOS_RAW_CLEANED].[DESCRICAO_RAW]' />
+          <map key='[NOME_CAMPO_CLEANED (DOMINIOS!RAW!CLEANED)]' value='[DOMINIOS_RAW_CLEANED].[NOME_CAMPO_CLEANED]' />
+          <map key='[NOME_CAMPO_CLEANED]' value='[DICIONARIO_RAW_CLEANED].[NOME_CAMPO_CLEANED]' />
+          <map key='[NOME_CAMPO_RAW (DOMINIOS!RAW!CLEANED)]' value='[DOMINIOS_RAW_CLEANED].[NOME_CAMPO_RAW]' />
+          <map key='[NOME_CAMPO_RAW]' value='[DICIONARIO_RAW_CLEANED].[NOME_CAMPO_RAW]' />
+          <map key='[SEQUENCIA]' value='[DICIONARIO_RAW_CLEANED].[SEQUENCIA]' />
+          <map key='[TIPO_ARQUIVO]' value='[DICIONARIO_RAW_CLEANED].[TIPO_ARQUIVO]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[DICIONARIO_RAW_CLEANED]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>1</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:G10001:no:A1:G2147483647:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[DOMINIOS_RAW_CLEANED]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>2</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:G2168:no:A1:G2168:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ANO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[ANO]</local-name>
+            <parent-name>[DICIONARIO_RAW_CLEANED]</parent-name>
+            <remote-alias>ANO</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TIPO_ARQUIVO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[TIPO_ARQUIVO]</local-name>
+            <parent-name>[DICIONARIO_RAW_CLEANED]</parent-name>
+            <remote-alias>TIPO_ARQUIVO</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SEQUENCIA</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SEQUENCIA]</local-name>
+            <parent-name>[DICIONARIO_RAW_CLEANED]</parent-name>
+            <remote-alias>SEQUENCIA</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NOME_CAMPO_RAW</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[NOME_CAMPO_RAW]</local-name>
+            <parent-name>[DICIONARIO_RAW_CLEANED]</parent-name>
+            <remote-alias>NOME_CAMPO_RAW</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DESCRICAO_CAMPO_RAW</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DESCRICAO_CAMPO_RAW]</local-name>
+            <parent-name>[DICIONARIO_RAW_CLEANED]</parent-name>
+            <remote-alias>DESCRICAO_CAMPO_RAW</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NOME_CAMPO_CLEANED</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[NOME_CAMPO_CLEANED]</local-name>
+            <parent-name>[DICIONARIO_RAW_CLEANED]</parent-name>
+            <remote-alias>NOME_CAMPO_CLEANED</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DESCRICAO_CAMPO_CLEANED</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DESCRICAO_CAMPO_CLEANED]</local-name>
+            <parent-name>[DICIONARIO_RAW_CLEANED]</parent-name>
+            <remote-alias>DESCRICAO_CAMPO_CLEANED</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ANO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[ANO (DOMINIOS!RAW!CLEANED)]</local-name>
+            <parent-name>[DOMINIOS_RAW_CLEANED]</parent-name>
+            <remote-alias>ANO</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NOME_CAMPO_RAW</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[NOME_CAMPO_RAW (DOMINIOS!RAW!CLEANED)]</local-name>
+            <parent-name>[DOMINIOS_RAW_CLEANED]</parent-name>
+            <remote-alias>NOME_CAMPO_RAW</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CODIGO_DOMINIO_RAW</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[CODIGO_DOMINIO_RAW]</local-name>
+            <parent-name>[DOMINIOS_RAW_CLEANED]</parent-name>
+            <remote-alias>CODIGO_DOMINIO_RAW</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DESCRICAO_RAW</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DESCRICAO_RAW]</local-name>
+            <parent-name>[DOMINIOS_RAW_CLEANED]</parent-name>
+            <remote-alias>DESCRICAO_RAW</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NOME_CAMPO_CLEANED</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[NOME_CAMPO_CLEANED (DOMINIOS!RAW!CLEANED)]</local-name>
+            <parent-name>[DOMINIOS_RAW_CLEANED]</parent-name>
+            <remote-alias>NOME_CAMPO_CLEANED</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CODIGO_DOMINIO_CURATED</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CODIGO_DOMINIO_CURATED]</local-name>
+            <parent-name>[DOMINIOS_RAW_CLEANED]</parent-name>
+            <remote-alias>CODIGO_DOMINIO_CURATED</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DESCRICAO_CURATED</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DESCRICAO_CURATED]</local-name>
+            <parent-name>[DOMINIOS_RAW_CLEANED]</parent-name>
+            <remote-alias>DESCRICAO_CURATED</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Ano (Dominios!Raw!Cleaned)' datatype='string' name='[ANO (DOMINIOS!RAW!CLEANED)]' role='dimension' type='nominal' />
+      <column caption='Codigo Padronizado' datatype='integer' name='[CODIGO_DOMINIO_CURATED]' role='dimension' type='ordinal' />
+      <column caption='Codigo Origem' datatype='string' name='[CODIGO_DOMINIO_RAW]' role='dimension' type='nominal' />
+      <column caption='Descricao Campo Cleaned' datatype='string' name='[DESCRICAO_CAMPO_CLEANED]' role='dimension' type='nominal' />
+      <column caption='Descricao Campo Raw' datatype='string' name='[DESCRICAO_CAMPO_RAW]' role='dimension' type='nominal' />
+      <column caption='Descricao Padronizado' datatype='string' name='[DESCRICAO_CURATED]' role='dimension' type='nominal' />
+      <column caption='Descricao Origem' datatype='string' name='[DESCRICAO_RAW]' role='dimension' type='nominal' />
+      <column caption='Nome Campo Padronizado' datatype='string' name='[NOME_CAMPO_CLEANED (DOMINIOS!RAW!CLEANED)]' role='dimension' type='nominal' />
+      <column caption='Nome Campo Cleaned' datatype='string' name='[NOME_CAMPO_CLEANED]' role='dimension' type='nominal' />
+      <column caption='Nome Campo Origem' datatype='string' name='[NOME_CAMPO_RAW (DOMINIOS!RAW!CLEANED)]' role='dimension' type='nominal' />
+      <column caption='Nome Campo Raw' datatype='string' name='[NOME_CAMPO_RAW]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Sequencia' datatype='integer' name='[SEQUENCIA]' role='dimension' type='ordinal' />
+      <column caption='Tipo Arquivo' datatype='string' name='[TIPO_ARQUIVO]' role='dimension' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='DICIONARIO_RAW_CLEANED' datatype='table' name='[__tableau_internal_object_id__].[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='DOMINIOS_RAW_CLEANED' datatype='table' name='[__tableau_internal_object_id__].[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]' role='measure' type='quantitative' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='pt_BR' class='hyper' dbname='C:/Users/rdear/Downloads/PJT_ENEM/02_Dicionario/CLEANED_DICIONARIO_TCC.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='09/28/2021 04:48:50 AM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177' table='[Extract].[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+            <relation name='DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177' table='[Extract].[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]' type='table' />
+            <relation name='DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D' table='[Extract].[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]' type='table' />
+          </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <cols>
+            <map key='[ANO (DOMINIOS!RAW!CLEANED)]' value='[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D].[ANO]' />
+            <map key='[ANO]' value='[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177].[ANO]' />
+            <map key='[CODIGO_DOMINIO_CURATED]' value='[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D].[CODIGO_DOMINIO_CURATED]' />
+            <map key='[CODIGO_DOMINIO_RAW]' value='[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D].[CODIGO_DOMINIO_RAW]' />
+            <map key='[DESCRICAO_CAMPO_CLEANED]' value='[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177].[DESCRICAO_CAMPO_CLEANED]' />
+            <map key='[DESCRICAO_CAMPO_RAW]' value='[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177].[DESCRICAO_CAMPO_RAW]' />
+            <map key='[DESCRICAO_CURATED]' value='[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D].[DESCRICAO_CURATED]' />
+            <map key='[DESCRICAO_RAW]' value='[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D].[DESCRICAO_RAW]' />
+            <map key='[NOME_CAMPO_CLEANED (DOMINIOS!RAW!CLEANED)]' value='[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D].[NOME_CAMPO_CLEANED]' />
+            <map key='[NOME_CAMPO_CLEANED]' value='[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177].[NOME_CAMPO_CLEANED]' />
+            <map key='[NOME_CAMPO_RAW (DOMINIOS!RAW!CLEANED)]' value='[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D].[NOME_CAMPO_RAW]' />
+            <map key='[NOME_CAMPO_RAW]' value='[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177].[NOME_CAMPO_RAW]' />
+            <map key='[SEQUENCIA]' value='[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177].[SEQUENCIA]' />
+            <map key='[TIPO_ARQUIVO]' value='[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177].[TIPO_ARQUIVO]' />
+          </cols>
+          <refresh>
+            <refresh-event add-from-file-path='CLEANED_DICIONARIO_TCC' increment-value='%null%' refresh-type='create' rows-inserted='2945' timestamp-start='2021-09-28 04:48:50.726' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>ANO</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ANO]</local-name>
+              <parent-name>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</parent-name>
+              <remote-alias>ANO</remote-alias>
+              <ordinal>0</ordinal>
+              <family>DICIONARIO_RAW_CLEANED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TIPO_ARQUIVO</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[TIPO_ARQUIVO]</local-name>
+              <parent-name>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</parent-name>
+              <remote-alias>TIPO_ARQUIVO</remote-alias>
+              <ordinal>1</ordinal>
+              <family>DICIONARIO_RAW_CLEANED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SEQUENCIA</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[SEQUENCIA]</local-name>
+              <parent-name>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</parent-name>
+              <remote-alias>SEQUENCIA</remote-alias>
+              <ordinal>2</ordinal>
+              <family>DICIONARIO_RAW_CLEANED</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>166</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>NOME_CAMPO_RAW</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[NOME_CAMPO_RAW]</local-name>
+              <parent-name>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</parent-name>
+              <remote-alias>NOME_CAMPO_RAW</remote-alias>
+              <ordinal>3</ordinal>
+              <family>DICIONARIO_RAW_CLEANED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>175</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DESCRICAO_CAMPO_RAW</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DESCRICAO_CAMPO_RAW]</local-name>
+              <parent-name>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</parent-name>
+              <remote-alias>DESCRICAO_CAMPO_RAW</remote-alias>
+              <ordinal>4</ordinal>
+              <family>DICIONARIO_RAW_CLEANED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>203</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>NOME_CAMPO_CLEANED</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[NOME_CAMPO_CLEANED]</local-name>
+              <parent-name>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</parent-name>
+              <remote-alias>NOME_CAMPO_CLEANED</remote-alias>
+              <ordinal>5</ordinal>
+              <family>DICIONARIO_RAW_CLEANED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>175</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DESCRICAO_CAMPO_CLEANED</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DESCRICAO_CAMPO_CLEANED]</local-name>
+              <parent-name>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</parent-name>
+              <remote-alias>DESCRICAO_CAMPO_CLEANED</remote-alias>
+              <ordinal>6</ordinal>
+              <family>DICIONARIO_RAW_CLEANED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>174</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ANO</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ANO (DOMINIOS!RAW!CLEANED)]</local-name>
+              <parent-name>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</parent-name>
+              <remote-alias>ANO</remote-alias>
+              <ordinal>7</ordinal>
+              <family>DOMINIOS_RAW_CLEANED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>NOME_CAMPO_RAW</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[NOME_CAMPO_RAW (DOMINIOS!RAW!CLEANED)]</local-name>
+              <parent-name>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</parent-name>
+              <remote-alias>NOME_CAMPO_RAW</remote-alias>
+              <ordinal>8</ordinal>
+              <family>DOMINIOS_RAW_CLEANED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>130</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CODIGO_DOMINIO_RAW</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CODIGO_DOMINIO_RAW]</local-name>
+              <parent-name>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</parent-name>
+              <remote-alias>CODIGO_DOMINIO_RAW</remote-alias>
+              <ordinal>9</ordinal>
+              <family>DOMINIOS_RAW_CLEANED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>214</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DESCRICAO_RAW</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DESCRICAO_RAW]</local-name>
+              <parent-name>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</parent-name>
+              <remote-alias>DESCRICAO_RAW</remote-alias>
+              <ordinal>10</ordinal>
+              <family>DOMINIOS_RAW_CLEANED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>292</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>NOME_CAMPO_CLEANED</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[NOME_CAMPO_CLEANED (DOMINIOS!RAW!CLEANED)]</local-name>
+              <parent-name>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</parent-name>
+              <remote-alias>NOME_CAMPO_CLEANED</remote-alias>
+              <ordinal>11</ordinal>
+              <family>DOMINIOS_RAW_CLEANED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>130</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CODIGO_DOMINIO_CURATED</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[CODIGO_DOMINIO_CURATED]</local-name>
+              <parent-name>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</parent-name>
+              <remote-alias>CODIGO_DOMINIO_CURATED</remote-alias>
+              <ordinal>12</ordinal>
+              <family>DOMINIOS_RAW_CLEANED</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>204</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DESCRICAO_CURATED</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DESCRICAO_CURATED]</local-name>
+              <parent-name>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</parent-name>
+              <remote-alias>DESCRICAO_CURATED</remote-alias>
+              <ordinal>13</ordinal>
+              <family>DOMINIOS_RAW_CLEANED</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>219</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Brazil&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='DICIONARIO_RAW_CLEANED' id='DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177'>
+            <properties context=''>
+              <relation connection='excel-direct.09g3adg1jtb01n1b6p2jh127t83v' name='DICIONARIO_RAW_CLEANED' table='[DICIONARIO_RAW_CLEANED$]' type='table'>
+                <columns gridOrigin='A1:G10001:no:A1:G2147483647:0' header='yes' outcome='2'>
+                  <column datatype='string' name='ANO' ordinal='0' />
+                  <column datatype='string' name='TIPO_ARQUIVO' ordinal='1' />
+                  <column datatype='integer' name='SEQUENCIA' ordinal='2' />
+                  <column datatype='string' name='NOME_CAMPO_RAW' ordinal='3' />
+                  <column datatype='string' name='DESCRICAO_CAMPO_RAW' ordinal='4' />
+                  <column datatype='string' name='NOME_CAMPO_CLEANED' ordinal='5' />
+                  <column datatype='string' name='DESCRICAO_CAMPO_CLEANED' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177' table='[Extract].[DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177]' type='table' />
+            </properties>
+          </object>
+          <object caption='DOMINIOS_RAW_CLEANED' id='DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D'>
+            <properties context=''>
+              <relation connection='excel-direct.09g3adg1jtb01n1b6p2jh127t83v' name='DOMINIOS_RAW_CLEANED' table='[DOMINIOS_RAW_CLEANED$]' type='table'>
+                <columns gridOrigin='A1:G2168:no:A1:G2168:0' header='yes' outcome='2'>
+                  <column datatype='string' name='ANO' ordinal='0' />
+                  <column datatype='string' name='NOME_CAMPO_RAW' ordinal='1' />
+                  <column datatype='string' name='CODIGO_DOMINIO_RAW' ordinal='2' />
+                  <column datatype='string' name='DESCRICAO_RAW' ordinal='3' />
+                  <column datatype='string' name='NOME_CAMPO_CLEANED' ordinal='4' />
+                  <column datatype='integer' name='CODIGO_DOMINIO_CURATED' ordinal='5' />
+                  <column datatype='string' name='DESCRICAO_CURATED' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D' table='[Extract].[DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[ANO]' />
+                <expression op='[ANO (DOMINIOS!RAW!CLEANED)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[NOME_CAMPO_RAW]' />
+                <expression op='[NOME_CAMPO_RAW (DOMINIOS!RAW!CLEANED)]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='DICIONARIO!RAW!CLEANED_53031C3282594F6C8D4E4745A1BDF177' unique-key='true' />
+            <second-end-point object-id='DOMINIOS!RAW!CLEANED_5AA3C7335483480FAADEDB5B928DB35D' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='MNEMONICOS' inline='true' name='federated.1ni6xjo0ysb2s41a7muug0nnkzxc' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='DICIONARIO_TCC' name='excel-direct.15bsxkm1nccitp108ba030woc45n'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/rdear/Downloads/PJT_ENEM/02_Dicionario/DICIONARIO_TCC.xlsx' interpretationMode='0' password='' server='' validate='no' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.15bsxkm1nccitp108ba030woc45n' name='MNEMONICOS' table='[MNEMONICOS$]' type='table'>
+          <columns gridOrigin='A1:B136:no:A1:B136:0' header='yes' outcome='2'>
+            <column datatype='string' name='MNEMONICO' ordinal='0' />
+            <column datatype='string' name='DESCRICAO' ordinal='1' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='excel-direct.15bsxkm1nccitp108ba030woc45n' name='MNEMONICOS' table='[MNEMONICOS$]' type='table'>
+          <columns gridOrigin='A1:B136:no:A1:B136:0' header='yes' outcome='2'>
+            <column datatype='string' name='MNEMONICO' ordinal='0' />
+            <column datatype='string' name='DESCRICAO' ordinal='1' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[MNEMONICOS]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B136:no:A1:B136:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MNEMONICO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MNEMONICO]</local-name>
+            <parent-name>[MNEMONICOS]</parent-name>
+            <remote-alias>MNEMONICO</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[MNEMONICOS_451412FB9FD44EC5B00F8428FEB2C6F3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DESCRICAO</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DESCRICAO]</local-name>
+            <parent-name>[MNEMONICOS]</parent-name>
+            <remote-alias>DESCRICAO</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPT_RBR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[MNEMONICOS_451412FB9FD44EC5B00F8428FEB2C6F3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Descricao' datatype='string' name='[DESCRICAO]' role='dimension' type='nominal' />
+      <column caption='Mnemonico' datatype='string' name='[MNEMONICO]' role='dimension' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='MNEMONICOS' datatype='table' name='[__tableau_internal_object_id__].[MNEMONICOS_451412FB9FD44EC5B00F8428FEB2C6F3]' role='measure' type='quantitative' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='pt_BR' class='hyper' dbname='C:/Users/rdear/Downloads/PJT_ENEM/02_Dicionario/MNEMONICOS.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='09/28/2021 04:50:45 AM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='MNEMONICOS' increment-value='%null%' refresh-type='create' rows-inserted='135' timestamp-start='2021-09-28 04:50:45.472' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>MNEMONICO</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MNEMONICO]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MNEMONICO</remote-alias>
+              <ordinal>0</ordinal>
+              <family>MNEMONICOS</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>135</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[MNEMONICOS_451412FB9FD44EC5B00F8428FEB2C6F3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DESCRICAO</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DESCRICAO]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DESCRICAO</remote-alias>
+              <ordinal>1</ordinal>
+              <family>MNEMONICOS</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>135</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LPT_RBR_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[MNEMONICOS_451412FB9FD44EC5B00F8428FEB2C6F3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Brazil&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='MNEMONICOS' id='MNEMONICOS_451412FB9FD44EC5B00F8428FEB2C6F3'>
+            <properties context=''>
+              <relation connection='excel-direct.15bsxkm1nccitp108ba030woc45n' name='MNEMONICOS' table='[MNEMONICOS$]' type='table'>
+                <columns gridOrigin='A1:B136:no:A1:B136:0' header='yes' outcome='2'>
+                  <column datatype='string' name='MNEMONICO' ordinal='0' />
+                  <column datatype='string' name='DESCRICAO' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <shared-views>
+    <shared-view name='federated.0eqwd8k04z3rfm16yue131w9t33w'>
+      <datasources>
+        <datasource caption='DICIONARIO_TCC' name='federated.0eqwd8k04z3rfm16yue131w9t33w' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0eqwd8k04z3rfm16yue131w9t33w'>
+        <column caption='Campo' datatype='string' name='[CAMPO]' role='dimension' type='nominal' />
+        <column caption='Tabela ' datatype='string' name='[TABELA (TABELAS!CURATED)]' role='dimension' type='nominal' />
+        <column caption='Tipo Dados' datatype='string' name='[TIPO_DADOS]' role='dimension' type='nominal' />
+        <column-instance column='[CAMPO]' derivation='None' name='[none:CAMPO:nk]' pivot='key' type='nominal' />
+        <column-instance column='[TABELA (TABELAS!CURATED)]' derivation='None' name='[none:TABELA (TABELAS!CURATED):nk]' pivot='key' type='nominal' />
+        <column-instance column='[TIPO_DADOS]' derivation='None' name='[none:TIPO_DADOS:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <filter class='categorical' column='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:CAMPO:nk]'>
+        <groupfilter function='level-members' level='[none:CAMPO:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TABELA (TABELAS!CURATED):nk]'>
+        <groupfilter function='member' level='[none:TABELA (TABELAS!CURATED):nk]' member='&quot;DIM_CADASTRAL&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TIPO_DADOS:nk]'>
+        <groupfilter function='level-members' level='[none:TIPO_DADOS:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+    </shared-view>
+    <shared-view name='federated.0xkocjr1r27xsb14beufj0tkjaa7'>
+      <datasources>
+        <datasource caption='CLEANED_DICIONARIO_TCC' name='federated.0xkocjr1r27xsb14beufj0tkjaa7' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0xkocjr1r27xsb14beufj0tkjaa7'>
+        <column datatype='string' name='[ANO]' role='dimension' type='nominal' />
+        <column caption='Descricao Campo Cleaned' datatype='string' name='[DESCRICAO_CAMPO_CLEANED]' role='dimension' type='nominal' />
+        <column caption='Descricao Campo Raw' datatype='string' name='[DESCRICAO_CAMPO_RAW]' role='dimension' type='nominal' />
+        <column caption='Nome Campo Cleaned' datatype='string' name='[NOME_CAMPO_CLEANED]' role='dimension' type='nominal' />
+        <column caption='Nome Campo Raw' datatype='string' name='[NOME_CAMPO_RAW]' role='dimension' type='nominal' />
+        <column-instance column='[ANO]' derivation='None' name='[none:ANO:ok]' pivot='key' type='nominal' />
+        <column-instance column='[DESCRICAO_CAMPO_CLEANED]' derivation='None' name='[none:DESCRICAO_CAMPO_CLEANED:nk]' pivot='key' type='nominal' />
+        <column-instance column='[DESCRICAO_CAMPO_RAW]' derivation='None' name='[none:DESCRICAO_CAMPO_RAW:nk]' pivot='key' type='nominal' />
+        <column-instance column='[NOME_CAMPO_CLEANED]' derivation='None' name='[none:NOME_CAMPO_CLEANED:nk]' pivot='key' type='nominal' />
+        <column-instance column='[NOME_CAMPO_RAW]' derivation='None' name='[none:NOME_CAMPO_RAW:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <filter class='categorical' column='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:ANO:ok]'>
+        <groupfilter from='&quot;2015&quot;' function='range' level='[none:ANO:ok]' to='&quot;2019&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CAMPO_CLEANED:nk]'>
+        <groupfilter from='&quot;Ano de Conclusão do Ensino Médio&quot;' function='range' level='[none:DESCRICAO_CAMPO_CLEANED:nk]' to='&quot;Vetor com as respostas do inscrito na parte objetiva da prova de Matemática&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CAMPO_RAW:nk]'>
+        <groupfilter from='&quot;A partir da apresentação de algumas ocupações divididas em grupos ordenados, indique o grupo que contempla a ocupação mais próxima da ocupação da sua mãe ou da mulher responsável por você. (Se ela não estiver trabalhando, escolha uma ocupação pensando no último trabalho dela).&quot;' function='range' level='[none:DESCRICAO_CAMPO_RAW:nk]' to='&quot;Você já concluiu ou está concluindo o Ensino Médio?&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_CLEANED:nk]'>
+        <groupfilter from='&quot;ANO_CCL_ENS_MED&quot;' function='range' level='[none:NOME_CAMPO_CLEANED:nk]' to='&quot;UF_RSD&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_RAW:nk]'>
+        <groupfilter from='&quot;CO_ESCOLA&quot;' function='range' level='[none:NOME_CAMPO_RAW:nk]' to='&quot;TX_RESPOSTAS_MT&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+      </filter>
+    </shared-view>
+  </shared-views>
+  <worksheets>
+    <worksheet name='Colunas'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontsize='12' underline='true'>&lt;</run>
+            <run bold='true' fontalignment='1' fontsize='12' underline='true'>Sheet Name</run>
+            <run bold='true' fontalignment='1' fontsize='12' underline='true'>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='DICIONARIO_TCC' name='federated.0eqwd8k04z3rfm16yue131w9t33w' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0eqwd8k04z3rfm16yue131w9t33w'>
+            <column caption='Campo' datatype='string' name='[CAMPO]' role='dimension' type='nominal' />
+            <column caption='Descricao Campo' datatype='string' name='[DESCRICAO_CAMPO_CLEANED]' role='dimension' type='nominal' />
+            <column aggregation='Sum' caption='Sequencia' datatype='integer' name='[SEQUENCIA]' role='dimension' type='ordinal' />
+            <column caption='Tabela ' datatype='string' name='[TABELA (TABELAS!CURATED)]' role='dimension' type='nominal' />
+            <column caption='Tabela' datatype='string' name='[TABELA]' role='dimension' type='nominal' />
+            <column caption='Tamanho' datatype='integer' name='[TAMANHO]' role='measure' type='quantitative' />
+            <column caption='Tipo Dados' datatype='string' name='[TIPO_DADOS]' role='dimension' type='nominal' />
+            <column-instance column='[CAMPO]' derivation='None' name='[none:CAMPO:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DESCRICAO_CAMPO_CLEANED]' derivation='None' name='[none:DESCRICAO_CAMPO_CLEANED:nk]' pivot='key' type='nominal' />
+            <column-instance column='[SEQUENCIA]' derivation='None' name='[none:SEQUENCIA:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[TABELA (TABELAS!CURATED)]' derivation='None' name='[none:TABELA (TABELAS!CURATED):nk]' pivot='key' type='nominal' />
+            <column-instance column='[TABELA]' derivation='None' name='[none:TABELA:nk]' pivot='key' type='nominal' />
+            <column-instance column='[TIPO_DADOS]' derivation='None' name='[none:TIPO_DADOS:nk]' pivot='key' type='nominal' />
+            <column-instance column='[TAMANHO]' derivation='Sum' name='[sum:TAMANHO:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TABELA (TABELAS!CURATED):nk]</column>
+            <column>[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:CAMPO:nk]</column>
+            <column>[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TIPO_DADOS:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:DESCRICAO_CAMPO_CLEANED:nk]' value='129' />
+            <format attr='height' field='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TIPO_DADOS:nk]' value='67' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:DESCRICAO_CAMPO_CLEANED:nk]' value='804' />
+            <format attr='width' field='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TABELA:nk]' value='296' />
+            <format attr='width' field='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TIPO_DADOS:nk]' value='288' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0eqwd8k04z3rfm16yue131w9t33w].[sum:TAMANHO:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TABELA:nk] / ([federated.0eqwd8k04z3rfm16yue131w9t33w].[none:SEQUENCIA:ok] / ([federated.0eqwd8k04z3rfm16yue131w9t33w].[none:CAMPO:nk] / ([federated.0eqwd8k04z3rfm16yue131w9t33w].[none:DESCRICAO_CAMPO_CLEANED:nk] / [federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TIPO_DADOS:nk]))))</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{BF433709-1407-467A-A8CC-26A24FED1DDE}' />
+    </worksheet>
+    <worksheet name='DICT_MNE'>
+      <layout-options>
+        <title>
+          <formatted-text />
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='MNEMONICOS' name='federated.1ni6xjo0ysb2s41a7muug0nnkzxc' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ni6xjo0ysb2s41a7muug0nnkzxc'>
+            <column caption='Descricao' datatype='string' name='[DESCRICAO]' role='dimension' type='nominal' />
+            <column caption='Mnemonico' datatype='string' name='[MNEMONICO]' role='dimension' type='nominal' />
+            <column-instance column='[DESCRICAO]' derivation='None' name='[none:DESCRICAO:nk]' pivot='key' type='nominal' />
+            <column-instance column='[MNEMONICO]' derivation='None' name='[none:MNEMONICO:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1ni6xjo0ysb2s41a7muug0nnkzxc].[none:DESCRICAO:nk]'>
+            <groupfilter function='level-members' level='[none:DESCRICAO:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1ni6xjo0ysb2s41a7muug0nnkzxc].[none:MNEMONICO:nk]'>
+            <groupfilter function='level-members' level='[none:MNEMONICO:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1ni6xjo0ysb2s41a7muug0nnkzxc].[none:MNEMONICO:nk]</column>
+            <column>[federated.1ni6xjo0ysb2s41a7muug0nnkzxc].[none:DESCRICAO:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='13' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1ni6xjo0ysb2s41a7muug0nnkzxc].[none:MNEMONICO:nk]' value='148' />
+            <format attr='width' field='[federated.1ni6xjo0ysb2s41a7muug0nnkzxc].[none:DESCRICAO:nk]' value='1540' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1ni6xjo0ysb2s41a7muug0nnkzxc].[none:MNEMONICO:nk] / [federated.1ni6xjo0ysb2s41a7muug0nnkzxc].[none:DESCRICAO:nk])</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{B56FA678-4916-4678-BC7D-C90528843EB1}' />
+    </worksheet>
+    <worksheet name='Dicionário Origem x Padronizado'>
+      <layout-options>
+        <title>
+          <formatted-text />
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='CLEANED_DICIONARIO_TCC' name='federated.0xkocjr1r27xsb14beufj0tkjaa7' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0xkocjr1r27xsb14beufj0tkjaa7'>
+            <column datatype='string' name='[ANO]' role='dimension' type='nominal' />
+            <column caption='Descricao Campo Cleaned' datatype='string' name='[DESCRICAO_CAMPO_CLEANED]' role='dimension' type='nominal' />
+            <column caption='Descricao Campo Raw' datatype='string' name='[DESCRICAO_CAMPO_RAW]' role='dimension' type='nominal' />
+            <column caption='Nome Campo Cleaned' datatype='string' name='[NOME_CAMPO_CLEANED]' role='dimension' type='nominal' />
+            <column caption='Nome Campo Raw' datatype='string' name='[NOME_CAMPO_RAW]' role='dimension' type='nominal' />
+            <column-instance column='[ANO]' derivation='CountD' name='[ctd:ANO:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ANO]' derivation='None' name='[none:ANO:ok]' pivot='key' type='nominal' />
+            <column-instance column='[DESCRICAO_CAMPO_CLEANED]' derivation='None' name='[none:DESCRICAO_CAMPO_CLEANED:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DESCRICAO_CAMPO_RAW]' derivation='None' name='[none:DESCRICAO_CAMPO_RAW:nk]' pivot='key' type='nominal' />
+            <column-instance column='[NOME_CAMPO_CLEANED]' derivation='None' name='[none:NOME_CAMPO_CLEANED:nk]' pivot='key' type='nominal' />
+            <column-instance column='[NOME_CAMPO_RAW]' derivation='None' name='[none:NOME_CAMPO_RAW:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:ANO:ok]</column>
+            <column>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_RAW:nk]</column>
+            <column>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_CLEANED:nk]</column>
+            <column>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CAMPO_RAW:nk]</column>
+            <column>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CAMPO_CLEANED:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CAMPO_CLEANED:nk]' value='62' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CAMPO_CLEANED:nk]' value='432' />
+            <format attr='width' field='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CAMPO_RAW:nk]' value='448' />
+            <format attr='width' field='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_RAW:nk]' value='188' />
+            <format attr='width' field='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_CLEANED:nk]' value='200' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:ANO:ok]' value='Ano'>
+              <formatted-text>
+                <run bold='true' fontalignment='1' underline='true'>Ano</run>
+              </formatted-text>
+            </format>
+            <format attr='title' field='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_RAW:nk]' value='Nome Campo Origem'>
+              <formatted-text>
+                <run bold='true' fontalignment='1' underline='true'>Nome Campo Origem</run>
+              </formatted-text>
+            </format>
+            <format attr='title' field='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_CLEANED:nk]' value='Nome Campo Padronizado'>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontcolor='#000000' underline='true'>Nome Campo Padronizado</run>
+              </formatted-text>
+            </format>
+            <format attr='title' field='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CAMPO_RAW:nk]' value='Descricao Padronizada'>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontcolor='#000000' underline='true'>Descricao Padronizada</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[ctd:ANO:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_CLEANED:nk] / ([federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_RAW:nk] / ([federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CAMPO_RAW:nk] / [federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CAMPO_CLEANED:nk])))</rows>
+        <cols>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:ANO:ok]</cols>
+      </table>
+      <simple-id uuid='{CD45212A-A703-41A9-B3E9-2241913B488C}' />
+    </worksheet>
+    <worksheet name='Domínios Padronizados'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontsize='12' underline='true'>&lt;</run>
+            <run bold='true' fontalignment='1' fontsize='12' underline='true'>Sheet Name</run>
+            <run bold='true' fontalignment='1' fontsize='12' underline='true'>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='CLEANED_DICIONARIO_TCC' name='federated.0xkocjr1r27xsb14beufj0tkjaa7' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0xkocjr1r27xsb14beufj0tkjaa7'>
+            <column caption='Ano (Dominios!Raw!Cleaned)' datatype='string' name='[ANO (DOMINIOS!RAW!CLEANED)]' role='dimension' type='nominal' />
+            <column datatype='string' name='[ANO]' role='dimension' type='nominal' />
+            <column caption='Codigo Padronizado' datatype='integer' name='[CODIGO_DOMINIO_CURATED]' role='dimension' type='ordinal' />
+            <column caption='Codigo Origem' datatype='string' name='[CODIGO_DOMINIO_RAW]' role='dimension' type='nominal' />
+            <column caption='Descricao Campo Cleaned' datatype='string' name='[DESCRICAO_CAMPO_CLEANED]' role='dimension' type='nominal' />
+            <column caption='Descricao Campo Raw' datatype='string' name='[DESCRICAO_CAMPO_RAW]' role='dimension' type='nominal' />
+            <column caption='Descricao Padronizado' datatype='string' name='[DESCRICAO_CURATED]' role='dimension' type='nominal' />
+            <column caption='Descricao Origem' datatype='string' name='[DESCRICAO_RAW]' role='dimension' type='nominal' />
+            <column caption='Nome Campo Padronizado' datatype='string' name='[NOME_CAMPO_CLEANED (DOMINIOS!RAW!CLEANED)]' role='dimension' type='nominal' />
+            <column caption='Nome Campo Cleaned' datatype='string' name='[NOME_CAMPO_CLEANED]' role='dimension' type='nominal' />
+            <column caption='Nome Campo Origem' datatype='string' name='[NOME_CAMPO_RAW (DOMINIOS!RAW!CLEANED)]' role='dimension' type='nominal' />
+            <column caption='Nome Campo Raw' datatype='string' name='[NOME_CAMPO_RAW]' role='dimension' type='nominal' />
+            <column-instance column='[ANO (DOMINIOS!RAW!CLEANED)]' derivation='None' name='[none:ANO (DOMINIOS!RAW!CLEANED):nk]' pivot='key' type='nominal' />
+            <column-instance column='[ANO]' derivation='None' name='[none:ANO:ok]' pivot='key' type='nominal' />
+            <column-instance column='[CODIGO_DOMINIO_CURATED]' derivation='None' name='[none:CODIGO_DOMINIO_CURATED:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[CODIGO_DOMINIO_RAW]' derivation='None' name='[none:CODIGO_DOMINIO_RAW:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DESCRICAO_CAMPO_CLEANED]' derivation='None' name='[none:DESCRICAO_CAMPO_CLEANED:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DESCRICAO_CAMPO_RAW]' derivation='None' name='[none:DESCRICAO_CAMPO_RAW:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DESCRICAO_CURATED]' derivation='None' name='[none:DESCRICAO_CURATED:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DESCRICAO_RAW]' derivation='None' name='[none:DESCRICAO_RAW:nk]' pivot='key' type='nominal' />
+            <column-instance column='[NOME_CAMPO_CLEANED (DOMINIOS!RAW!CLEANED)]' derivation='None' name='[none:NOME_CAMPO_CLEANED (DOMINIOS!RAW!CLEANED):nk]' pivot='key' type='nominal' />
+            <column-instance column='[NOME_CAMPO_CLEANED]' derivation='None' name='[none:NOME_CAMPO_CLEANED:nk]' pivot='key' type='nominal' />
+            <column-instance column='[NOME_CAMPO_RAW (DOMINIOS!RAW!CLEANED)]' derivation='None' name='[none:NOME_CAMPO_RAW (DOMINIOS!RAW!CLEANED):nk]' pivot='key' type='nominal' />
+            <column-instance column='[NOME_CAMPO_RAW]' derivation='None' name='[none:NOME_CAMPO_RAW:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:ANO:ok]</column>
+            <column>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_RAW:nk]</column>
+            <column>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_CLEANED:nk]</column>
+            <column>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CAMPO_RAW:nk]</column>
+            <column>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CAMPO_CLEANED:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_RAW:nk]' value='376' />
+            <format attr='width' field='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CURATED:nk]' value='652' />
+            <format attr='width' field='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:CODIGO_DOMINIO_CURATED:ok]' value='228' />
+            <format attr='width' field='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_CLEANED (DOMINIOS!RAW!CLEANED):nk]' value='152' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>([federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:ANO (DOMINIOS!RAW!CLEANED):nk] / ([federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_RAW (DOMINIOS!RAW!CLEANED):nk] / ([federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_CLEANED (DOMINIOS!RAW!CLEANED):nk] / ([federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:CODIGO_DOMINIO_RAW:nk] / ([federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_RAW:nk] / ([federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:CODIGO_DOMINIO_CURATED:ok] / [federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CURATED:nk]))))))</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{85D30152-3DFA-4542-9FD4-68D3A3FD5F27}' />
+    </worksheet>
+    <worksheet name='Tabela'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontsize='12' underline='true'>&lt;</run>
+            <run bold='true' fontalignment='1' fontsize='12' underline='true'>Sheet Name</run>
+            <run bold='true' fontalignment='1' fontsize='12' underline='true'>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='DICIONARIO_TCC' name='federated.0eqwd8k04z3rfm16yue131w9t33w' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0eqwd8k04z3rfm16yue131w9t33w'>
+            <column caption='Campo' datatype='string' name='[CAMPO]' role='dimension' type='nominal' />
+            <column caption='Descricao Tabela' datatype='string' name='[DESCRICAO_TABELA]' role='dimension' type='nominal' />
+            <column caption='Tabela ' datatype='string' name='[TABELA (TABELAS!CURATED)]' role='dimension' type='nominal' />
+            <column caption='Tipo Dados' datatype='string' name='[TIPO_DADOS]' role='dimension' type='nominal' />
+            <column-instance column='[CAMPO]' derivation='None' name='[none:CAMPO:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DESCRICAO_TABELA]' derivation='None' name='[none:DESCRICAO_TABELA:nk]' pivot='key' type='nominal' />
+            <column-instance column='[TABELA (TABELAS!CURATED)]' derivation='None' name='[none:TABELA (TABELAS!CURATED):nk]' pivot='key' type='nominal' />
+            <column-instance column='[TIPO_DADOS]' derivation='None' name='[none:TIPO_DADOS:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TABELA (TABELAS!CURATED):nk]</column>
+            <column>[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:CAMPO:nk]</column>
+            <column>[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TIPO_DADOS:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:DESCRICAO_TABELA:nk]' value='45' />
+            <format attr='width' value='13' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TABELA (TABELAS!CURATED):nk]' value='348' />
+            <format attr='width' field='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:DESCRICAO_TABELA:nk]' value='1532' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TABELA (TABELAS!CURATED):nk]' value='Tabela '>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontcolor='#000000' underline='true'>Tabela </run>
+              </formatted-text>
+            </format>
+            <format attr='title' field='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:CAMPO:nk]' value='Campo'>
+              <formatted-text>
+                <run bold='true' fontalignment='1' underline='true'>Campo</run>
+              </formatted-text>
+            </format>
+            <format attr='title' field='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TIPO_DADOS:nk]' value='Tipo Dados'>
+              <formatted-text>
+                <run bold='true' fontalignment='1' underline='true'>Tipo Dados</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TABELA (TABELAS!CURATED):nk] / [federated.0eqwd8k04z3rfm16yue131w9t33w].[none:DESCRICAO_TABELA:nk])</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{91BC249B-05AF-414D-A583-1B3C5E2DAF6A}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Catálogo de Dados - ENEM' type='storyboard'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' underline='true'>&lt;</run>
+            <run bold='true' fontalignment='1' fontcolor='#000000' underline='true'>Sheet Name</run>
+            <run bold='true' fontalignment='1' fontcolor='#000000' underline='true'>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98142' id='1' param='vert' removable='false' type-v2='layout-flow' w='99062' x='469' y='929'>
+            <zone h='4762' id='3' type-v2='title' w='99062' x='469' y='929' />
+            <zone h='11731' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='99062' x='469' y='5691' />
+            <zone h='81649' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='99062' x='469' y='17422'>
+              <flipboard active-id='1' nav-type='caption' show-nav-arrows='true'>
+                <story-points>
+                  <story-point caption='Origem x Padronização' captured-sheet='Origem x Padronização' id='1' />
+                  <story-point caption='Curated' captured-sheet='Curated' id='2' />
+                  <story-point caption='Dicionário de Mnemônicos' captured-sheet='Painel 3' id='4' />
+                </story-points>
+              </flipboard>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <simple-id uuid='{B804E63E-8DA7-471E-831F-ABCA09D143EE}' />
+    </dashboard>
+    <dashboard name='Curated'>
+      <style />
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource caption='DICIONARIO_TCC' name='federated.0eqwd8k04z3rfm16yue131w9t33w' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0eqwd8k04z3rfm16yue131w9t33w'>
+        <column caption='Campo' datatype='string' name='[CAMPO]' role='dimension' type='nominal' />
+        <column caption='Tabela ' datatype='string' name='[TABELA (TABELAS!CURATED)]' role='dimension' type='nominal' />
+        <column caption='Tipo Dados' datatype='string' name='[TIPO_DADOS]' role='dimension' type='nominal' />
+        <column-instance column='[CAMPO]' derivation='None' name='[none:CAMPO:nk]' pivot='key' type='nominal' />
+        <column-instance column='[TABELA (TABELAS!CURATED)]' derivation='None' name='[none:TABELA (TABELAS!CURATED):nk]' pivot='key' type='nominal' />
+        <column-instance column='[TIPO_DADOS]' derivation='None' name='[none:TIPO_DADOS:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='87931' id='12' param='horz' type-v2='layout-flow' w='99062' x='469' y='11140'>
+            <zone h='87931' id='10' type-v2='layout-basic' w='99062' x='469' y='11140'>
+              <zone h='87931' id='8' param='horz' type-v2='layout-flow' w='99062' x='469' y='11140'>
+                <zone h='87931' id='6' type-v2='layout-basic' w='99062' x='469' y='11140'>
+                  <zone h='26951' id='3' name='Tabela' w='99062' x='469' y='11140'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='60980' id='5' name='Colunas' w='99062' x='469' y='38091'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='10211' id='15' param='horz' type-v2='layout-flow' w='23778' x='75753' y='929'>
+            <zone h='10211' id='16' mode='dropdown' name='Tabela' param='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TABELA (TABELAS!CURATED):nk]' show-all='false' type-v2='filter' values='relevant' w='7926' x='75753' y='929'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='10211' id='17' mode='checkdropdown' name='Tabela' param='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:CAMPO:nk]' type-v2='filter' values='relevant' w='7926' x='83679' y='929'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='10211' id='18' mode='checkdropdown' name='Tabela' param='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TIPO_DADOS:nk]' type-v2='filter' values='relevant' w='7926' x='91605' y='929'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='10211' id='19' is-scaled='1' param='C:/Users/rdear/Downloads/PJT_ENEM/04_Data_Viz/ENEM_Logo.jpg' type-v2='bitmap' w='8497' x='469' y='929'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone forceUpdate='true' h='10211' id='20' type-v2='text' w='66787' x='8966' y='929'>
+            <formatted-text>
+              <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='24' underline='true'>Catálogo de Dados - Curated</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='850' minheight='850' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='54' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98142' id='53' param='vert' type-v2='layout-flow' w='99062' x='469' y='929'>
+                <zone fixed-size='74' h='10211' id='19' is-fixed='true' is-scaled='1' param='C:/Users/rdear/Downloads/PJT_ENEM/04_Data_Viz/ENEM_Logo.jpg' type-v2='bitmap' w='8497' x='469' y='929'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='10211' id='20' type-v2='text' w='66787' x='8966' y='929'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='24' underline='true'>Catálogo de Dados - Curated</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='10211' id='16' mode='dropdown' name='Tabela' param='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TABELA (TABELAS!CURATED):nk]' show-all='false' type-v2='filter' values='relevant' w='7926' x='75753' y='929'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='10211' id='17' mode='checkdropdown' name='Tabela' param='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:CAMPO:nk]' type-v2='filter' values='relevant' w='7926' x='83679' y='929'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='10211' id='18' mode='checkdropdown' name='Tabela' param='[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TIPO_DADOS:nk]' type-v2='filter' values='relevant' w='7926' x='91605' y='929'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='208' h='26951' id='3' is-fixed='true' name='Tabela' w='99062' x='469' y='11140'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='60980' id='5' is-fixed='true' name='Colunas' w='99062' x='469' y='38091'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{06941D03-0857-4742-98D0-EB9AA60051D5}' />
+    </dashboard>
+    <dashboard name='Origem x Padronização'>
+      <style />
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource caption='CLEANED_DICIONARIO_TCC' name='federated.0xkocjr1r27xsb14beufj0tkjaa7' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0xkocjr1r27xsb14beufj0tkjaa7'>
+        <column datatype='string' name='[ANO]' role='dimension' type='nominal' />
+        <column caption='Descricao Campo Raw' datatype='string' name='[DESCRICAO_CAMPO_RAW]' role='dimension' type='nominal' />
+        <column caption='Nome Campo Cleaned' datatype='string' name='[NOME_CAMPO_CLEANED]' role='dimension' type='nominal' />
+        <column-instance column='[ANO]' derivation='None' name='[none:ANO:ok]' pivot='key' type='nominal' />
+        <column-instance column='[DESCRICAO_CAMPO_RAW]' derivation='None' name='[none:DESCRICAO_CAMPO_RAW:nk]' pivot='key' type='nominal' />
+        <column-instance column='[NOME_CAMPO_CLEANED]' derivation='None' name='[none:NOME_CAMPO_CLEANED:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98142' id='19' param='horz' type-v2='layout-flow' w='99062' x='469' y='929'>
+            <zone h='98142' id='16' param='horz' type-v2='layout-flow' w='99062' x='469' y='929'>
+              <zone h='98142' id='13' param='horz' type-v2='layout-flow' w='99062' x='469' y='929'>
+                <zone h='98142' id='10' param='horz' type-v2='layout-flow' w='99062' x='469' y='929'>
+                  <zone h='98142' id='8' type-v2='layout-basic' w='99062' x='469' y='929'>
+                    <zone h='49019' id='3' name='Dicionário Origem x Padronizado' w='99062' x='469' y='9053'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='40999' id='5' name='Domínios Padronizados' w='99062' x='469' y='58072'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8124' id='6' is-scaled='1' param='C:/Users/rdear/Downloads/PJT_ENEM/04_Data_Viz/ENEM_Logo.jpg' type-v2='bitmap' w='7199' x='469' y='929'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone forceUpdate='true' h='8124' id='7' type-v2='text' w='63389' x='7668' y='929'>
+                      <formatted-text>
+                        <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='24' underline='true'>Dicionário de Dados - Origem x Padronização</run>
+                      </formatted-text>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8124' id='11' mode='checkdropdown' name='Dicionário Origem x Padronizado' param='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:ANO:ok]' type-v2='filter' values='relevant' w='6852' x='71057' y='929'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8124' id='14' mode='checkdropdown' name='Dicionário Origem x Padronizado' param='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_CLEANED:nk]' type-v2='filter' values='relevant' w='11658' x='77909' y='929'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8124' id='20' mode='checkdropdown' name='Dicionário Origem x Padronizado' param='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CAMPO_RAW:nk]' type-v2='filter' values='relevant' w='9964' x='89567' y='929'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='900' minheight='900' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='36' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98142' id='35' param='vert' type-v2='layout-flow' w='99062' x='469' y='929'>
+                <zone fixed-size='57' h='8124' id='6' is-fixed='true' is-scaled='1' param='C:/Users/rdear/Downloads/PJT_ENEM/04_Data_Viz/ENEM_Logo.jpg' type-v2='bitmap' w='7199' x='469' y='929'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='8124' id='7' type-v2='text' w='63389' x='7668' y='929'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='24' underline='true'>Dicionário de Dados - Origem x Padronização</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8124' id='11' mode='checkdropdown' name='Dicionário Origem x Padronizado' param='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:ANO:ok]' type-v2='filter' values='relevant' w='6852' x='71057' y='929'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8124' id='14' mode='checkdropdown' name='Dicionário Origem x Padronizado' param='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_CLEANED:nk]' type-v2='filter' values='relevant' w='11658' x='77909' y='929'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8124' id='20' mode='checkdropdown' name='Dicionário Origem x Padronizado' param='[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CAMPO_RAW:nk]' type-v2='filter' values='relevant' w='9964' x='89567' y='929'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49019' id='3' is-fixed='true' name='Dicionário Origem x Padronizado' w='99062' x='469' y='9053'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='40999' id='5' is-fixed='true' name='Domínios Padronizados' w='99062' x='469' y='58072'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{26CFC807-A66F-4921-BD85-0967E57277FC}' />
+    </dashboard>
+    <dashboard name='Painel 3'>
+      <style />
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource caption='MNEMONICOS' name='federated.1ni6xjo0ysb2s41a7muug0nnkzxc' />
+      </datasources>
+      <datasource-dependencies datasource='federated.1ni6xjo0ysb2s41a7muug0nnkzxc'>
+        <column caption='Descricao' datatype='string' name='[DESCRICAO]' role='dimension' type='nominal' />
+        <column caption='Mnemonico' datatype='string' name='[MNEMONICO]' role='dimension' type='nominal' />
+        <column-instance column='[DESCRICAO]' derivation='None' name='[none:DESCRICAO:nk]' pivot='key' type='nominal' />
+        <column-instance column='[MNEMONICO]' derivation='None' name='[none:MNEMONICO:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='89431' id='7' param='horz' type-v2='layout-flow' w='99062' x='469' y='9640'>
+            <zone h='89431' id='5' type-v2='layout-basic' w='99062' x='469' y='9640'>
+              <zone h='89431' id='3' name='DICT_MNE' w='99062' x='469' y='9640'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='8711' id='10' type-v2='layout-flow' w='6268' x='83890' y='929'>
+            <zone h='8711' id='8' mode='checkdropdown' name='DICT_MNE' param='[federated.1ni6xjo0ysb2s41a7muug0nnkzxc].[none:MNEMONICO:nk]' type-v2='filter' values='relevant' w='6268' x='83890' y='929'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='8711' id='9' mode='checkdropdown' name='DICT_MNE' param='[federated.1ni6xjo0ysb2s41a7muug0nnkzxc].[none:DESCRICAO:nk]' type-v2='filter' values='relevant' w='9373' x='90158' y='929'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='8711' id='11' is-scaled='1' param='C:/Users/rdear/Downloads/PJT_ENEM/04_Data_Viz/ENEM_Logo.jpg' type-v2='bitmap' w='9431' x='469' y='929'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone forceUpdate='true' h='8711' id='12' type-v2='text' w='73990' x='9900' y='929'>
+            <formatted-text>
+              <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='24' underline='true'>Dicionário de Mnemônicos</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='24' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98142' id='23' param='vert' type-v2='layout-flow' w='99062' x='469' y='929'>
+                <zone fixed-size='62' h='8711' id='11' is-fixed='true' is-scaled='1' param='C:/Users/rdear/Downloads/PJT_ENEM/04_Data_Viz/ENEM_Logo.jpg' type-v2='bitmap' w='9431' x='469' y='929'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='8711' id='12' type-v2='text' w='73990' x='9900' y='929'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='24' underline='true'>Dicionário de Mnemônicos</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8711' id='8' mode='checkdropdown' name='DICT_MNE' param='[federated.1ni6xjo0ysb2s41a7muug0nnkzxc].[none:MNEMONICO:nk]' type-v2='filter' values='relevant' w='6268' x='83890' y='929'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8711' id='9' mode='checkdropdown' name='DICT_MNE' param='[federated.1ni6xjo0ysb2s41a7muug0nnkzxc].[none:DESCRICAO:nk]' type-v2='filter' values='relevant' w='9373' x='90158' y='929'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='89431' id='3' is-fixed='true' name='DICT_MNE' w='99062' x='469' y='9640'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{8DC76622-1902-4764-B9C1-248234D2D448}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='89'>
+    <window class='dashboard' maximized='true' name='Catálogo de Dados - ENEM'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{B74437E7-5558-4FAE-BA8B-FA534BBB8788}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Colunas'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:CAMPO:nk]</field>
+            <field>[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:DESCRICAO_CAMPO_CLEANED:nk]</field>
+            <field>[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:NOME_CAMPO_CLEANED:nk]</field>
+            <field>[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:SEQUENCIA:ok]</field>
+            <field>[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TABELA:nk]</field>
+            <field>[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TIPO_DADOS:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{8455D18F-6502-4A9D-8FD2-EAB3023A0C54}' />
+    </window>
+    <window class='dashboard' hidden='true' name='Curated'>
+      <viewpoints>
+        <viewpoint name='Colunas'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Tabela'>
+          <zoom type='fit-width' />
+        </viewpoint>
+      </viewpoints>
+      <active id='16' />
+      <simple-id uuid='{3D0074B7-ADA4-48D6-840C-6A82F761A1A7}' />
+    </window>
+    <window class='worksheet' hidden='true' name='DICT_MNE'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1ni6xjo0ysb2s41a7muug0nnkzxc].[none:DESCRICAO:nk]</field>
+            <field>[federated.1ni6xjo0ysb2s41a7muug0nnkzxc].[none:MNEMONICO:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{091D9BE5-ABE9-424D-9668-616E16C276C2}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Dicionário Origem x Padronizado'>
+      <cards>
+        <edge name='left'>
+          <strip size='215'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:ANO:ok]</field>
+            <field>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:ANO:qk]</field>
+            <field>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CAMPO_CLEANED:nk]</field>
+            <field>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CAMPO_RAW:nk]</field>
+            <field>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_CLEANED:nk]</field>
+            <field>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_RAW:nk]</field>
+            <field>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:SEQUENCIA:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{285F30F8-6107-4DF0-9965-CC1DCFAAAB3D}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Domínios Padronizados'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:ANO (DOMINIOS!RAW!CLEANED):ok]</field>
+            <field>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:CODIGO_DOMINIO_CURATED:ok]</field>
+            <field>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:CODIGO_DOMINIO_RAW:nk]</field>
+            <field>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_CURATED:nk]</field>
+            <field>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:DESCRICAO_RAW:nk]</field>
+            <field>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_CLEANED (DOMINIOS!RAW!CLEANED):nk]</field>
+            <field>[federated.0xkocjr1r27xsb14beufj0tkjaa7].[none:NOME_CAMPO_RAW (DOMINIOS!RAW!CLEANED):nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{6C8B5092-2593-4402-A82D-3B51F91AF4C1}' />
+    </window>
+    <window class='dashboard' hidden='true' name='Origem x Padronização'>
+      <viewpoints>
+        <viewpoint name='Dicionário Origem x Padronizado'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Domínios Padronizados'>
+          <zoom type='fit-width' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{93E8610D-DEBB-4027-8DC6-1591D67977B6}' />
+    </window>
+    <window class='dashboard' hidden='true' name='Painel 3'>
+      <viewpoints>
+        <viewpoint name='DICT_MNE'>
+          <zoom type='fit-width' />
+        </viewpoint>
+      </viewpoints>
+      <active id='9' />
+      <simple-id uuid='{F6973B8E-0488-40A4-A764-26B4BAA24D53}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Tabela'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:DESCRICAO_TABELA:nk]</field>
+            <field>[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TABELA (TABELAS!CURATED):nk]</field>
+            <field>[federated.0eqwd8k04z3rfm16yue131w9t33w].[none:TIPO_DADOS:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{469883B9-FAF8-4DDB-8628-8CD91B43CADB}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Catálogo de Dados - ENEM' width='192'>
+      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
+      Bn50XQAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
