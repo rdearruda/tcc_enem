@@ -1,0 +1,15 @@
+CREATE TABLE DIM_PRESENCA_RR
+(
+NUM_INS VARCHAR(12) PRIMARY KEY
+, ANO_ENEM VARCHAR(4)
+, FL_PSC_CIE_HUM varchar(20)
+, FL_PSC_CIE_NAT varchar(20)
+, FL_PSC_LNG_COD varchar(20)
+, FL_PSC_MAT varchar(20)
+, FL_PSC_DIA_1 varchar(3)
+, FL_PSC_DIA_2 varchar(3)
+, FL_PSC varchar(3)
+, COD_TPO_PSC int
+, DSC_TPO_PSC VARCHAR(20)
+)
+;
